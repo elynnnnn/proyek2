@@ -1,0 +1,188 @@
+/* --- Global & Setup Warna --- */
+:root {
+    --pink-soft: #f8bbd0;      /* Pink lembut */
+    --pink-deep: #e91e63;      /* Pink tegas (sebagai aksen) */
+    --purple-text: #673ab7;    /* Ungu sebagai warna teks utama */
+    --bg-color: #ffe0f0;       /* BACKGROUND UTAMA: Pink muda */
+    --shadow-color: rgba(233, 30, 99, 0.4); /* Bayangan dari pink tegas */
+}
+
+body {
+    background-color: var(--bg-color); /* Menggunakan warna pink muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* --- Fotocard Styling --- */
+.fotocard-wrapper {
+    padding: 20px;
+}
+
+.fotocard {
+    width: 300px;
+    height: 450px;
+    /* Background fotocard juga disesuaikan agar serasi dengan pink muda */
+    background: linear-gradient(135deg, #ffffff 60%, var(--pink-soft) 100%); 
+    border-radius: 20px;
+    box-shadow: 0 15px 30px var(--shadow-color), 
+                0 0 0 4px var(--pink-soft); 
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease-in-out;
+    border: 2px solid var(--pink-deep); 
+}
+
+/* Efek Hover Elegan */
+.fotocard:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 20px 40px var(--shadow-color),
+                0 0 0 4px var(--pink-deep);
+}
+
+/* --- Header & Text Styling --- */
+.header-nisa {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--purple-text);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px dashed var(--pink-soft);
+    padding-bottom: 10px;
+}
+
+/* --- Content Body (Ikon) --- */
+.content-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    margin: 20px 0;
+}
+
+.cute-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px; 
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.cute-icon:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.html-icon {
+    background-color: var(--pink-soft);
+    border: 2px solid var(--pink-deep);
+}
+
+.css-icon {
+    background-color: #fce4ec; /* Pink sangat muda */
+    border: 2px solid var(--pink-soft); /* Border pink lembut */
+}
+
+/* Style untuk ikon Font Awesome */
+.cute-icon i {
+    font-size: 3em;
+    color: var(--purple-text); 
+    margin-bottom: 5px;
+}
+
+.label {
+    font-weight: 700;
+    color: var(--purple-text);
+    font-size: 0.9em;
+}
+
+/* --- Name Tag & Social Links --- */
+.name-tag {
+    margin: 15px 0;
+}
+
+.handle {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--pink-deep);
+    margin: 0;
+}
+
+.title {
+    font-size: 0.9em;
+    color: #90a4ae; 
+    margin: 5px 0 0 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2em;
+    transition: transform 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn:hover {
+    transform: scale(1.1); 
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #f06292, #d81b60); 
+}
+
+.youtube-btn {
+    background-color: #c62828; 
+}
+
+/* --- Footer --- */
+.footer-nisa {
+    font-size: 0.85em;
+    color: #777;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
+}
+
+/* --- ANIMASI ELEGANT (ANTI-ERROR) --- */
+
+/* 1. Definisikan keyframes animasi putar */
+@keyframes soft-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 2. Aplikasikan animasi ke ikon salju (di dalam .css-icon) */
+.css-icon i {
+    font-size: 3em;
+    color: var(--purple-text);
+    margin-bottom: 5px;
+    
+    /* Tambahan kode animasi: */
+    animation: soft-spin 8s linear infinite; /* Putar selama 8 detik, kecepatan konstan, berulang terus */
+}
